@@ -1,0 +1,65 @@
+//demo boxes 
+
+%box-template{
+	width:100px;
+	height:100px;
+	text-align: center;
+	font: 24px Arial;
+	border-radius: 10px;
+}
+
+.spin-demo-box {
+	@extend %box-template;
+	display:inline-block;
+	float:left;
+	margin:25px;
+}
+
+.wiggle-demo-box {
+	@extend %box-template;
+	width:250px;
+	display:block;
+	margin: 25px auto;
+	color:white;
+}
+
+.bouncy-demo-box {
+	@extend %box-template;
+	display:block;
+	margin: 25px auto;
+	border-radius: 50px;
+	color: white;
+	font: 16px Arial;
+}
+
+.nod-yes-demo-box {
+	@extend %box-template;
+	display:inline-block;
+	color: white;
+}
+
+.nod-no-demo-box {
+	@extend %box-template;
+	display:inline-block;
+	color: white;
+}
+.spin-down-demo-box {
+	@extend %box-template;
+	display:block;
+	margin:25px auto;
+	width:150px;
+}
+
+.levitate-demo-box {
+	@extend %box-template;
+	display:block;
+	margin:25px auto;
+}
+
+.center-demo-box {
+	@extend %box-template;
+	margin:25px auto;
+	width:200px;
+	height:150px;
+	color:white;
+}

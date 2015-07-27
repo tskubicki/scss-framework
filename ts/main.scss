@@ -1,0 +1,147 @@
+@import 'demo-boxes';
+
+//bootleg css and sizing reset
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+//set full height and width for children to reference
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+//creates ts-spin-1 through ts-spin-5
+@for $i from 1 through 5 { 
+	@keyframes spin-#{$i} {
+		from{transform:rotate(0deg);}
+		to{transform:rotate(360deg);}
+	}
+	.ts-spin-#{$i} {
+		animation: spin-#{$i} #{$i}s linear infinite;
+	}
+}
+
+//ts-wiggle keyframes and css rule
+@keyframes wiggle{
+	0% {transform: rotate(-3deg);}
+	10% {transform: rotate(3deg);}
+	20% {transform: rotate(-3deg);}
+	30% {transform: rotate(3deg);}
+	40% {transform: rotate(-3deg);}
+	50% {transform: rotate(3deg);}
+	60% {transform: rotate(-3deg);}
+	70% {transform: rotate(3deg);}
+	80% {transform: rotate(-3deg);}
+	90% {transform: rotate(3deg);}
+	100% {transform: rotate(-3deg);}
+}
+.ts-wiggle {
+	&:hover{
+		animation: wiggle 0.5s linear
+	}
+}
+
+//ts-bouncy keyframes and css
+@keyframes bouncy{
+	0% {transform: translate(0,0);}
+	15% {transform: translate(0,-30px);}
+	30% {transform: translate(0,0);}
+	45% {transform: translate(0,-20px);}
+	60% {transform: translate(0,0);}
+	75% {transform: translate(0,-10px);}
+	90% {transform: translate(0,0);}
+}
+.ts-bouncy{
+	&:hover{
+		animation: bouncy 0.5s linear
+	}
+}
+
+//ts-nod-yes keyframes and css
+@keyframes nod-yes{
+	25% {transform: translate(0,0);}
+	50% {transform: translate(0,-30px);}
+	75% {transform: translate(0,30px);}
+	100% {transform: translate(0,0px);}
+}
+.ts-nod-yes{
+	&:hover{
+		animation: nod-yes .6s ease
+	}
+}
+
+//ts-nod-no keyframes and css
+@keyframes nod-no{
+	25% {transform: translate(0,0);}
+	50% {transform: translate(-30px,0);}
+	75% {transform: translate(30px,0);}
+	100% {transform: translate(0,0px);}
+}
+.ts-nod-no{
+	&:hover{
+		animation: nod-no .6s ease
+	}
+}
+
+//.ts-spin-down keyframes and css
+@keyframes spin-down {
+	from{-webkit-transform: rotate(0deg) scale(1,1);}
+	to{-webkit-transform: rotate(360deg) scale(0,0);}
+}
+@keyframes spin-down-reverse {
+	from{-webkit-transform: rotate(360deg) scale(0,0);}
+	to{-webkit-transform: rotate(0deg) scale(1,1);}
+}
+.ts-spin-down{
+	animation: spin-down-reverse 1s ease;
+	&:hover{
+		animation: spin-down 1s ease forwards;
+	}
+}
+
+//ts-levitate keyframes and css
+@keyframes levitate {
+	0% {transform: translate(0,-10px);}
+	25% {transform: translate(0,-5);}
+	50% {transform: translate(0,-7px);}
+	75% {transform: translate(0,-6);}
+	100% {transform: translate(0,-10px);}
+}
+.ts-levitate{
+	animation: levitate 3s linear infinite;
+	box-shadow: 10px 10px 5px 5px #888888;
+}
+
+//that grey box wrapping every effect
+.feature-box {
+	margin: 0 auto;
+	width: 66%;
+	background-color:lightgrey;
+	border: thin solid black;
+	border-radius: 7px;
+	padding: 1%;
+	margin-bottom: 1%;
+	font-family: Arial;
+}
+
+.clearfix{
+	clear:both;
+}
+
+.vertical-align-center {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.ts-center{ //thanks to http://howtocenterincss.com/
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+/*# sourceMappingURL=main.css.map */
